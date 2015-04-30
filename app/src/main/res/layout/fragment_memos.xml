@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.daimajia.swipe.SwipeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Swipe item to the right to mark as done -->
+    <LinearLayout
+        android:layout_width="64dp"
+        android:layout_height="match_parent"
+        android:background="#4CAF50"
+        android:id="@+id/doneItem"
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:layout_gravity="end"
+        android:onClick="markMemoAsDone">
+
+        <ImageView
+            android:id="@+id/doneIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:src="@drawable/ic_listaction_done" />
+
+    </LinearLayout>
+
+    <!-- Swipe item to the left to snooze -->
+    <LinearLayout
+        android:layout_width="64dp"
+        android:layout_height="match_parent"
+        android:background="#FFC107"
+        android:id="@+id/snoozeItem"
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:layout_gravity="start"
+        android:onClick="markAsSnoozed">
+
+        <ImageView
+            android:id="@+id/snoozeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:src="@drawable/ic_listaction_snoozed" />
+
+    </LinearLayout>
+
+    <!-- Surface view start -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFF"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_drawer_memos"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/memosView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textColor="@color/myTextPrimaryColor"
+            android:textSize="16sp"
+            android:paddingStart="64dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"/>
+
+    </FrameLayout>
+    <!-- Surface view end -->
+
+</com.daimajia.swipe.SwipeLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Personal">
+
+        <EditTextPreference
+            android:title="@string/pref_user_name"
+            android:summary="e.g. John Doe"
+            android:key="userName"
+            android:capitalize="words"
+            android:singleLine="true"/>
+
+
+        <EditTextPreference
+            android:title="@string/pref_user_email"
+            android:summary="e.g. john.doe@gmail.com"
+            android:key="userEmail"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Notifications">
+
+        <CheckBoxPreference
+            android:title="@string/pref_notif"
+            android:summary="Receive push notifications"
+            android:key="receiveNotifications"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:title="@string/pref_vibrate"
+            android:summary="Vibrate on notification"
+            android:key="vibrateNotification"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Extra">
+
+        <Preference
+            android:title="@string/pref_user_picture"
+            android:key="userPicture"
+            android:summary="Select a profile picture"/>
+
+        <ListPreference
+            android:title="@string/pref_country"
+            android:key="userCountry"
+            android:defaultValue="Denmark"
+            android:summary="Select your country of residence"
+            android:entries="@array/countries_array"
+            android:entryValues="@array/countries_array" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
